@@ -1,4 +1,4 @@
-resource "aws_instance" "INSTANCE_DEMO" {
+resource "aws_instance" "INSTANCE_sabrij" {
         key_name = "test_keypair"
         ami = "ami-021d41cbdefc0c994"
         security_groups = ["sg-02ebf81c9fd2d0b68"]
@@ -7,10 +7,10 @@ resource "aws_instance" "INSTANCE_DEMO" {
 	user_data = "${file("web_data")}"
 
 	provisioner "local-exec" {
-		command = "echo ${aws_instance.INSTANCE_DEMO.public_ip} > toto"
+		command = "echo ${aws_instance.INSTANCE_sabrij.public_ip} > toto"
 	}
 
         tags = {
-                Name = "INSTANCE_DEMO"
+                Name = "INSTANCE_sabrij"
         }
 }
